@@ -1,2 +1,29 @@
-# Gyazo for Linux
+Gyazcasa?
+=========
+GooglePlus で写真共有がしやすいようにGyazo for Linux を元にGoogle Picasa にUpload するようにしたものです．
+アルバムは，`Instant Upload' にしてあるので自動的に長辺2048 にされて無制限アップロードになると思います．
+
+動作条件
+========
+Upload にはGoogleCL を利用しているのでGoogleCL の導入が必要です．
+Ohttp://code.google.com/p/googlecl/downloads/list
+
+初回実行時にはAOuth 認証が必要なので，初回はコマンドライン上で実行して認証してください．
+  $ ruby gyazo
+  --snip--
+  Please specify user: youraccount@gmail.com
+  Please log in and/or grant access via your browser at https://www.google.com/accounts/OAuthAuthorizeToken?oauth_token=xxxxxxxxxxxxxxxxxxxxxxxxx then hit enter.
+  --snip--
+
+バグ
+====
+Picasa に `Instant Upload' アルバムが複数ある場合は以下の様にアルバム選択で止まってしまいます．
+  More than one match for title Instant Upload
+  0) Instant Upload
+  1) Instant Upload
+  Please select one of the items by number:
+その場合はScript 中で以下の様にアルバム番号をyes で渡してあげると止まらなくなります．
+  `yes '0' | google picasa post --title '#{album}' #{tmpfile}`
+※0) を選択の場合の例．
+
 
