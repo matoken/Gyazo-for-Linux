@@ -2,6 +2,7 @@ Gyazcasa?
 =========
 GooglePlus で写真共有がしやすいようにGyazo for Linux を元にGoogle Picasa にUpload するようにしたものです．
 アルバムは，`Instant Upload' にしてあるので自動的に長辺2048 にされて無制限アップロードになると思います．
+URL は Firefox 固定ではなく xdg-open でシステムの規定のブラウザで開きます．
 
 動作条件
 ========
